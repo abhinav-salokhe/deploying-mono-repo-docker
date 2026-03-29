@@ -10,7 +10,7 @@ RUN bun install
 
 RUN bun run generate:db
 
-RUN DB_URL=$DB_URL bunx turbo build --fileter=web..
+RUN DATABASE_URL=$DATABASE_URL bunx turbo build --fileter=web..
 
 EXPOSE 3000
 
