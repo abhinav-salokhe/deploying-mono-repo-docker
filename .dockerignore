@@ -1,0 +1,32 @@
+# Node / Bun
+node_modules
+**/node_modules
+.bun
+bun.lockb
+
+# Git and metadata
+.git
+.gitignore
+
+# Turbo / build cache
+.turbo
+.next
+out
+dist
+build
+
+# Env and local files
+.env
+*.env
+*.log
+
+# Local DB / generated Prisma output
+*.db
+packages/db/generated
+packages/db/prisma/migrations
+
+# IDE / OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db

@@ -13,5 +13,9 @@
     "db": "*",
     "@types/express": "^5.0.6",
     "express": "^5.2.1"
+  },
+  "scripts": {
+    "generate:db": "cd packages/db && bunx prisma generate",
+    "start:backend": "cd apps/backend && bun run index.ts"
   }
 }

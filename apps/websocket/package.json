@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "db": "*"
+  },
+  "scripts": {
+    "start:ws": "cd apps/websocket && bun run index.ts"
   }
 }
