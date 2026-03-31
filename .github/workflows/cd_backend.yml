@@ -3,28 +3,28 @@
 # SSH into VM and start new image
 
 
-name : Deploy the backend
+name: Deploy the backend
 on:
   push:
     branches: [main]
 jobs:
   build:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - name : Checkout the code
-        uses : actions/checkout@v2
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
-      -  name: Docker login
-         uses: docker/login-action@v2
-         with:
-            username: ${{ secrets.DOCKERHUB_USERNAME }}
-            password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Docker login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name : Build and push
-        uses : docker.build-push-action@v4
-        with :
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
           context: .
-          file : ./docker/Dockerfile.backend
-          push : true
-          tags : abhisalokhe/todo-app-backend:${{ github.sha }}
+          file: ./Docker/Dockerfile.backend
+          push: true
+          tags: abhisalokhe/todo-app-backend:${{ github.sha }}
       
