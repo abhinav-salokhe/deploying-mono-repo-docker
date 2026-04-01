@@ -10,8 +10,8 @@ RUN bun install
 
 RUN bun run generate:db
 
-RUN echo ${DATABASE_URL}
-ENV DATABASE_URL=${DATABASE_URL}
+RUN echo ${secrets.DATABASE_URL}
+ENV DATABASE_URL=${secrets.DATABASE_URL}
 RUN bun run build
 
 EXPOSE 3000
