@@ -1,6 +1,6 @@
 FROM oven/bun:1
 
-ARG DB_URL
+ARG DATABASE_URL
 
 WORKDIR /usr/src/app
 
